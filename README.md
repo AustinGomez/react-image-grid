@@ -9,7 +9,7 @@ This is very barebones for now. More to come. (Demo images courtesy of Unsplash 
 ## Installation
 Simply:
 
-    yarn add react-photo-grid
+    yarn add react-responsive-photo-grid
 
 ## Usage
 See the src/demo for usage. You'll need the direct URLs to your photos, as well as the height and width of your images in pixels.

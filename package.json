@@ -1,5 +1,5 @@
 {
-  "name": "react-image-grid",
+  "name": "react-responsive-image-grid",
   "version": "0.1.0",
   "description": "React component to display a grid of images",
   "main": "build/index.js",
@@ -138,5 +138,11 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "keywords": [
+    "react",
+    "image",
+    "grid",
+    "component"
+  ]
 }
