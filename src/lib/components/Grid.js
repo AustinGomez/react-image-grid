@@ -29,7 +29,7 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
             // Don't add padding to the last item in a row
             paddingRight: index === row.length - 1 ? 0 : padding + "px"
         }
-        return <img style={imageStyle} src={image[0].download_url} alt={image[0].alt}key={"img_" + image[0].id + "_" + image[1]} />
+        return <img style={imageStyle} src={image[0].src} alt={image[0].alt}key={"img_" + image[0].id + "_" + image[1]} />
     }, [])
 
     // Build the rows of the grid. Each row must have an aspect ratio of at least minAspectRatio.
@@ -103,7 +103,7 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
 Grid.propTypes = {
     images: PropTypes.arrayOf(
         PropTypes.shape({
-            download_url: PropTypes.string.isRequired,
+            src: PropTypes.string.isRequired,
             height: PropTypes.number.isRequired,
             width: PropTypes.number.isRequired
         })).isRequired,
