@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import useWindowSize from '../hooks/UseWindowSize'
 import Lightbox from './Lightbox'
-import useToggle from '../hooks/UseToggle'
+import './Grid.css'
 
 const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
     let windowSize = useWindowSize()
@@ -25,8 +25,9 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
         setShowLightbox(true)
     }
 
-    // Creates <img/> tags from image and row metadata. 
-    const imageDataToImgTag = useCallback((image, index, row, width, padding, ref) => {
+    // Creates <img/> tags from image and row metadata.
+    // 
+    const imageDataToImgTag = useCallback((image, totalIndex, rowIndex, row, width) => {
         const calculatedRowHeight = ref.current.parentNode.clientWidth / width
 
         // Calculate the dimensions and padding of each image. This needs
@@ -38,16 +39,17 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
             width: calculatedRowHeight * image[1] - padding + "px",
 
             // Don't add padding to the last item in a row
-            paddingRight: index === row.length - 1 ? 0 : padding + "px"
+            paddingRight: rowIndex === row.length - 1 ? 0 : padding + "px"
         }
         return <img
+            className="grid-img"
             style={imageStyle}
-            data-index={index}
+            data-index={totalIndex}
             onClick={handleImageClick}
             src={image[0].download_url}
             alt={image[0].alt}
             key={"img_" + image[0].id + "_" + image[1]} />
-    }, [])
+    }, [ref, padding])
 
 
     // Build the rows of the grid. Each row must have an aspect ratio of at least minAspectRatio.
@@ -76,8 +78,8 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
                     width += ratio
                 }
                 let imageElements = []
-                for (let i = 0; i < row.length; i++) {
-                    imageElements.push(imageDataToImgTag(row[i], i, row, width, padding, ref))
+                for (let j = 0; j < row.length; j++) {
+                    imageElements.push(imageDataToImgTag(row[j], i - row.length + j, j, row, width))
                 }
                 // Add the finished row to the list of all rows.
                 allRows.push(imageElements)
@@ -95,7 +97,7 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
             paddingBottom: padding + "px"
         }
         setRows(allRows.map((row, index) => <div className="grid-row" style={divStyle} key={"row_" + index}>{row}</div>))
-    }, [images, padding, minAspectRatio, ref, imageDataToImgTag])
+    }, [images, padding, minAspectRatio, imageDataToImgTag])
 
     // Recalculate min aspect ratio when the window size changes.
     useEffect(() => {
