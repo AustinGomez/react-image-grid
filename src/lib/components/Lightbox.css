@@ -14,6 +14,15 @@
     display: flex;
 }
 
+.lightbox-header-shadow {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 72px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0))
+}
+
 .lightbox-image-container {
     display: flex;
     justify-content: space-around;
@@ -28,9 +37,42 @@
     max-height: 100%;
 }
 
-.lightbox-arrow {
-    color: white;
+.back-button {
+    height: 20px;
+    position: absolute;
+    left: 25px;
+    top: 30px;
+    cursor: pointer;
 }
+
+.arrow-container {
+    height: 80%;
+    width: 30%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position:absolute;
+    cursor: pointer;
+}
+
+/* override for the right arrow only */
+.arrow-container.right-arrow {
+    justify-content: flex-end;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.arrow-container img {
+    height: 72px;
+}
+
+
 
 .lightbox-backdrop {
     position: fixed;

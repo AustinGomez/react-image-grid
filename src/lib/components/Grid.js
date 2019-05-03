@@ -124,8 +124,8 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
                 <Lightbox
                     selectedImage={images[selectedIndex]}
                     onClose={() => setShowLightbox(false)}
-                    onPrev={() => setSelectedIndex(selectedIndex => (selectedIndex - 1 + images.length) % images.length)}
-                    onNext={() => setSelectedIndex(selectedIndex => (selectedIndex + 1) % images.length)} />
+                    onPrev={() => setSelectedIndex(selectedIndex => (+selectedIndex - 1 + images.length) % images.length)}
+                    onNext={() => setSelectedIndex(selectedIndex => (+selectedIndex + 1) % images.length)} />
                 : null
             }
         </>
