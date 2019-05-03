@@ -8,8 +8,8 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
     let windowSize = useWindowSize()
     const [minAspectRatio, setMinAspectRatio] = useState()
     const [rows, setRows] = useState([])
-    const [showLightbox, setShowLightbox] = useState(true)
-    const [selectedIndex, setSelectedIndex] = useState(1)
+    const [showLightbox, setShowLightbox] = useState(false)
+    const [selectedIndex, setSelectedIndex] = useState()
 
     // We'll use this value to calculate how many pictures we need in a row.
     // The "min" aspect ratio is the aspect ratio that will allow the row to
