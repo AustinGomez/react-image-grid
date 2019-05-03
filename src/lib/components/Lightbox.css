@@ -53,6 +53,7 @@
     align-items: center;
     position:absolute;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* override for the right arrow only */

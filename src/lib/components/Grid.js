@@ -49,10 +49,6 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
             key={"img_" + image[0].id + "_" + image[1]} />
     }, [ref, margin])
 
-    useEffect(() => {
-        console.log(selectedIndex)
-    }, [selectedIndex])
-
 
     // Build the rows of the grid. Each row must have an aspect ratio of at least minAspectRatio.
     // Then, each image in the row is scaled up to fill the desired width of the row, while maintaining
