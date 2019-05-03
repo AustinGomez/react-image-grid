@@ -44,7 +44,7 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
             style={imageStyle}
             data-index={totalIndex}
             onClick={handleImageClick}
-            src={image[0].download_url}
+            src={image[0].src}
             alt={image[0].alt}
             key={"img_" + image[0].id + "_" + image[1]} />
     }, [ref, margin])
@@ -131,7 +131,7 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
 Grid.propTypes = {
     images: PropTypes.arrayOf(
         PropTypes.shape({
-            download_url: PropTypes.string.isRequired,
+            src: PropTypes.string.isRequired,
             height: PropTypes.number.isRequired,
             width: PropTypes.number.isRequired
         })).isRequired,

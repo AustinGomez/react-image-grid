@@ -11,15 +11,15 @@ function App() {
         "width": 5616,
         "height": 3744,
         "url": "https://unsplash.com/photos/yC-Yzbqy7PY",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1",
         "author": "Alejandro Escamilla",
-        "width": 4898,
-        "height": 3265,
+        "width": 5616,
+        "height": 3744,
         "url": "https://unsplash.com/photos/LNRyGwIJr5c",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "10",
@@ -27,7 +27,7 @@ function App() {
         "width": 2500,
         "height": 1667,
         "url": "https://unsplash.com/photos/6J--NXulQCs",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "100",
@@ -35,7 +35,7 @@ function App() {
         "width": 2500,
         "height": 1656,
         "url": "https://unsplash.com/photos/pwaaqfoMibI",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1000",
@@ -43,7 +43,7 @@ function App() {
         "width": 5626,
         "height": 3635,
         "url": "https://unsplash.com/photos/6cY-FvMlmkQ",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1001",
@@ -51,7 +51,7 @@ function App() {
         "width": 5616,
         "height": 3744,
         "url": "https://unsplash.com/photos/1DkWWN1dr-s",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1002",
@@ -59,7 +59,7 @@ function App() {
         "width": 4312,
         "height": 2868,
         "url": "https://unsplash.com/photos/6-jTZysYY_U",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1003",
@@ -67,7 +67,7 @@ function App() {
         "width": 1181,
         "height": 1772,
         "url": "https://unsplash.com/photos/GYumuBnTqKc",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1004",
@@ -75,7 +75,7 @@ function App() {
         "width": 5616,
         "height": 3744,
         "url": "https://unsplash.com/photos/SSxIGsySh8o",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1005",
@@ -83,7 +83,7 @@ function App() {
         "width": 5760,
         "height": 3840,
         "url": "https://unsplash.com/photos/tBtuxtLvAZs",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1",
@@ -91,7 +91,7 @@ function App() {
         "width": 5616,
         "height": 3744,
         "url": "https://unsplash.com/photos/LNRyGwIJr5c",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "10",
@@ -99,7 +99,7 @@ function App() {
         "width": 2500,
         "height": 1667,
         "url": "https://unsplash.com/photos/6J--NXulQCs",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "100",
@@ -107,7 +107,7 @@ function App() {
         "width": 2500,
         "height": 1656,
         "url": "https://unsplash.com/photos/pwaaqfoMibI",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1000",
@@ -115,7 +115,7 @@ function App() {
         "width": 5626,
         "height": 3635,
         "url": "https://unsplash.com/photos/6cY-FvMlmkQ",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1001",
@@ -123,7 +123,7 @@ function App() {
         "width": 5616,
         "height": 3744,
         "url": "https://unsplash.com/photos/1DkWWN1dr-s",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1002",
@@ -131,7 +131,7 @@ function App() {
         "width": 4312,
         "height": 2868,
         "url": "https://unsplash.com/photos/6-jTZysYY_U",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1003",
@@ -139,7 +139,7 @@ function App() {
         "width": 1181,
         "height": 1772,
         "url": "https://unsplash.com/photos/GYumuBnTqKc",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1010",
@@ -147,7 +147,7 @@ function App() {
         "width": 5184,
         "height": 3456,
         "url": "https://unsplash.com/photos/NaWKMlp3tVs",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1011",
@@ -155,7 +155,7 @@ function App() {
         "width": 5472,
         "height": 3648,
         "url": "https://unsplash.com/photos/7BjmDICVloE",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1012",
@@ -163,7 +163,7 @@ function App() {
         "width": 3973,
         "height": 2639,
         "url": "https://unsplash.com/photos/uAgLGG1WBd4",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1013",
@@ -171,7 +171,7 @@ function App() {
         "width": 4256,
         "height": 2832,
         "url": "https://unsplash.com/photos/D8LcRLwZyPs",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1014",
@@ -179,7 +179,7 @@ function App() {
         "width": 6016,
         "height": 4000,
         "url": "https://unsplash.com/photos/AmPRUnRb6N0",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1015",
@@ -187,7 +187,7 @@ function App() {
         "width": 6000,
         "height": 4000,
         "url": "https://unsplash.com/photos/-oWyJoSqBRM",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1016",
@@ -195,7 +195,7 @@ function App() {
         "width": 3844,
         "height": 2563,
         "url": "https://unsplash.com/photos/_h7aBovKia4",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1018",
@@ -203,7 +203,7 @@ function App() {
         "width": 3914,
         "height": 2935,
         "url": "https://unsplash.com/photos/Kt5hRENuotI",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1012",
@@ -211,7 +211,7 @@ function App() {
         "width": 3973,
         "height": 2639,
         "url": "https://unsplash.com/photos/uAgLGG1WBd4",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1013",
@@ -219,7 +219,7 @@ function App() {
         "width": 4256,
         "height": 2832,
         "url": "https://unsplash.com/photos/D8LcRLwZyPs",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1014",
@@ -227,7 +227,7 @@ function App() {
         "width": 6016,
         "height": 4000,
         "url": "https://unsplash.com/photos/AmPRUnRb6N0",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1015",
@@ -235,7 +235,7 @@ function App() {
         "width": 6000,
         "height": 4000,
         "url": "https://unsplash.com/photos/-oWyJoSqBRM",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1016",
@@ -243,7 +243,7 @@ function App() {
         "width": 3844,
         "height": 2563,
         "url": "https://unsplash.com/photos/_h7aBovKia4",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1018",
@@ -251,7 +251,7 @@ function App() {
         "width": 3914,
         "height": 2935,
         "url": "https://unsplash.com/photos/Kt5hRENuotI",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1012",
@@ -259,7 +259,7 @@ function App() {
         "width": 3973,
         "height": 2639,
         "url": "https://unsplash.com/photos/uAgLGG1WBd4",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1013",
@@ -267,7 +267,7 @@ function App() {
         "width": 4256,
         "height": 2832,
         "url": "https://unsplash.com/photos/D8LcRLwZyPs",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1014",
@@ -275,7 +275,7 @@ function App() {
         "width": 6016,
         "height": 4000,
         "url": "https://unsplash.com/photos/AmPRUnRb6N0",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1015",
@@ -283,7 +283,7 @@ function App() {
         "width": 6000,
         "height": 4000,
         "url": "https://unsplash.com/photos/-oWyJoSqBRM",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1005",
@@ -291,7 +291,7 @@ function App() {
         "width": 5760,
         "height": 3840,
         "url": "https://unsplash.com/photos/tBtuxtLvAZs",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1006",
@@ -299,7 +299,7 @@ function App() {
         "width": 3000,
         "height": 2000,
         "url": "https://unsplash.com/photos/-wWRHIUklxM",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1008",
@@ -307,7 +307,7 @@ function App() {
         "width": 5616,
         "height": 3744,
         "url": "https://unsplash.com/photos/5L4XAgMSno0",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
       {
         "id": "1009",
@@ -315,7 +315,7 @@ function App() {
         "width": 5000,
         "height": 7502,
         "url": "https://unsplash.com/photos/CMWRIzyMKZk",
-        "download_url": "https://via.placeholder.com/150"
+        "src": "https://via.placeholder.com/150"
       },
     ]
   )

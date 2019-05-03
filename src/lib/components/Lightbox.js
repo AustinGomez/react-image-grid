@@ -43,7 +43,7 @@ const Lightbox = ({ selectedImage, onNext, onPrev, onClose }) => {
                         onMouseLeave={() => setShowLeftArrow(false)}>
                         {showLeftArrow ? <img src="icons/chevron-left.svg" alt="left arrow icon"/> : null}
                     </div>
-                    <img id="lightbox-image" src={selectedImage.download_url} alt={selectedImage.alt} />
+                    <img id="lightbox-image" src={selectedImage.src} alt={selectedImage.alt} />
                     <div className="arrow-container right-arrow"
                         onClick={onNext}
                         onMouseEnter={() => setShowRightArrow(true)}
