@@ -1,24 +1,38 @@
 .lightbox-window {
-    background: white;
-    border: 1px solid #f7f7f7;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
-    width: 40%;
-    height: 30%;
     position: fixed;
-    top: 20%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
     z-index: 11;
-}
-
-.lightbox-header {
-    background: white;
-    height: 40px;
+    background: black;
     display: flex;
-    justify-content: space-between;
-    padding: 1em 1em 0 1em;
 }
 
-.backdrop {
+.lightbox-image-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.lightbox-arrow {
+    color: white;
+}
+
+.lightbox-backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -26,13 +40,4 @@
     width: 100%;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-.close-modal-btn {
-    color: grey;
-    cursor: pointer;
-}
-
-.close-modal-btn:hover {
-    color: black;
 }

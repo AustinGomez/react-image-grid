@@ -16,10 +16,10 @@ function App() {
       {
         "id": "1",
         "author": "Alejandro Escamilla",
-        "width": 1900,
-        "height": 200,
+        "width": 4160,
+        "height": 2340,
         "url": "https://unsplash.com/photos/LNRyGwIJr5c",
-        "download_url": "https://picsum.photos/id/229/5000/200"
+        "download_url": "https://lh3.googleusercontent.com/Bm9iXBTecaC__evnHs0_hjyUbyk4fxCBMcyCeGG54JH7aJlhVmz1zwIdOkeQXG-i-1owjjKQ0MiiAZoeyTjrBqNk0BF3TvOJvKNr9jpgbwbOlqP2QJmhsLjI12Ckllk_3Dwc-rJElRIR5hti0bA8yrg0-RKsKN4wvPdG1WmJkoLaOM90QeGjdtd8M7BIqn9godorXQb7-wPuQzIYOYPm4a-l7BejF0iGR-MCsdx-rJlHJ4-ZAwv9a8SYpO8kvwtCJEe1MoWGUlcxsnolCVEpy_zbdQ9YD4jtso_ON2nsdbwUliK5uIyNPH8wHOg0d8ZSJps9i8-gIdIkciy0Jgdhh2tB5tDgt18AdE6bxj8-DZjbentx-fqEW2BGvj6WAIQFd1rOqWIyBXS9acvOlJEdqIksIAZhcE2ugUWiopDe4TrtDiAWpFONBcDoKUTX_ZMQv7DiXSdodz0SXsmXt5Ga6gh9NEZ7-n1B4LpwP_dFxts62U5TCCC3xkWP8UEcjug4sewtKUM7w2YIFBlu7U-geVs2v_WfztPKy4x7tQdwPCVBYalclF1dbHb8pOKiypKoZuGXePypUiPt7bW133j298z7_aH0GIQLB2Us1f0zrLOI-Q6faeyeTnjx6ZEl7QFuV-qE39jr5u4v8EO3xXjPx96-3gxmQXM=w2838-h1596-no"
       },
       {
         "id": "10",
@@ -323,7 +323,7 @@ function App() {
   const ref = React.createRef();
   return (
     <div className="App">
-      <Grid images={images} rowHeight={200} ref={ref} padding={6} />
+      <Grid images={images} rowHeight={200} ref={ref} margin={5} />
     </div>
   );
 }
