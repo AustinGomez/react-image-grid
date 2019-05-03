@@ -16,10 +16,10 @@ function App() {
       {
         "id": "1",
         "author": "Alejandro Escamilla",
-        "width": 5616,
-        "height": 3744,
+        "width": 1900,
+        "height": 200,
         "url": "https://unsplash.com/photos/LNRyGwIJr5c",
-        "download_url": "https://via.placeholder.com/150"
+        "download_url": "https://picsum.photos/id/229/5000/200"
       },
       {
         "id": "10",

@@ -112,21 +112,21 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
     }, [minAspectRatio, makeRows])
 
     return (
-        <>
+        <div>
             <div className="grid-container" ref={ref}>
                 {rows}
             </div>
             {showLightbox ?
                 <Lightbox
-                    selectedSrc={images[selectedIndex].id}
-                    nextSrc={images[(selectedIndex + 1) % images.length].id}
-                    prevSrc={images[(selectedIndex + images.length - 1) % images.length].id}
+                    selectedImage={images[selectedIndex]}
+                    nextImage={images[(selectedIndex + 1) % images.length]}
+                    prevImage={images[(selectedIndex + images.length - 1) % images.length]}
                     onClose={() => setShowLightbox(false)}
                     onPrev={() => setSelectedIndex(selectedIndex => (selectedIndex + images.length - 1) % images.length)}
                     onNext={() => setSelectedIndex(selectedIndex => (selectedIndex + 1) % images.length)} />
                 : null
             }
-        </>
+        </div>
     )
 })
 
