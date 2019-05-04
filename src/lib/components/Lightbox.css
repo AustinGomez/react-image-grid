@@ -25,11 +25,10 @@
 
 .lightbox-image-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
+    height: 100%;
+    margin: auto;
 }
 
 #lightbox-image {
@@ -62,11 +61,11 @@
 }
 
 .left-arrow {
-    left: 10px;
+    left: 30px;
 }
 
 .right-arrow {
-    right: 10px;
+    right: 30px;
 }
 
 .arrow-container img {
