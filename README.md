@@ -34,7 +34,7 @@ See the src/demo for usage. You'll need the direct URLs to your photos, as well 
     - Drag and drop images
     - Make images selectable
 
-##Notes
+## Notes
 Heavy design inspiration from Google Photos.
 
 Minimum aspect ratio idea from https://github.com/schlosser/pig.js.
