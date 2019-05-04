@@ -1,5 +1,8 @@
 # React Image Grid
 
+[![Build Status](https://travis-ci.com/AustinGomez/react-image-grid.svg?branch=master)](https://travis-ci.com/AustinGomez/react-image-grid)
+
+
 React Image Grid is an image grid component based on Google Photos. It will display a grid of photos, with customizeable row height and margins. The grid will adapt to fit it's parent container, and will resize rows according to screen size.
 
 ![Image of react-image-grid](https://i.imgur.com/KzZEowS.jpg)
