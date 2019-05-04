@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import PropTypes from 'prop-types'
 import useWindowSize from '../hooks/UseWindowSize'
+import Lightbox from './Lightbox'
+import './Grid.css'
 
-const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
+const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
     let windowSize = useWindowSize()
     const [minAspectRatio, setMinAspectRatio] = useState()
     const [rows, setRows] = useState([])
+    const [showLightbox, setShowLightbox] = useState(false)
+    const [selectedIndex, setSelectedIndex] = useState()
 
     // We'll use this value to calculate how many pictures we need in a row.
     // The "min" aspect ratio is the aspect ratio that will allow the row to
@@ -14,23 +18,37 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
         return (ref.current.parentNode.clientWidth) / rowHeight
     }, [rowHeight, ref])
 
-    // Creates <img/> tags from image and row metadata. 
-    const imageDataToImgTag = useCallback((image, index, row, width, padding, ref) => {
+    const handleImageClick = (e) => {
+        setSelectedIndex(e.target.getAttribute('data-index'))
+        setShowLightbox(true)
+    }
+
+    // Creates <img/> tags from image and row metadata.
+    // 
+    const imageDataToImgTag = useCallback((image, totalIndex, rowIndex, row, width) => {
         const calculatedRowHeight = ref.current.parentNode.clientWidth / width
 
-        // Calculate the dimensions and padding of each image. This needs
+        // Calculate the dimensions and margin of each image. This needs
         // to be inline since we need some values from the JS.
         let imageStyle = {
             height: calculatedRowHeight + "px",
 
-            // Take back out the padding from the ratio.
-            width: calculatedRowHeight * image[1] - padding + "px",
+            // Take back out the margin from the ratio.
+            width: calculatedRowHeight * image[1] - margin + "px",
 
-            // Don't add padding to the last item in a row
-            paddingRight: index === row.length - 1 ? 0 : padding + "px"
+            // Don't add margin to the last item in a row
+            marginRight: rowIndex === row.length - 1 ? 0 : margin + "px"
         }
-        return <img style={imageStyle} src={image[0].src} alt={image[0].alt}key={"img_" + image[0].id + "_" + image[1]} />
-    }, [])
+        return <img
+            className="grid-img"
+            style={imageStyle}
+            data-index={totalIndex}
+            onClick={handleImageClick}
+            src={image[0].src}
+            alt={image[0].alt}
+            key={"img_" + image[0].id + "_" + image[1]} />
+    }, [ref, margin])
+
 
     // Build the rows of the grid. Each row must have an aspect ratio of at least minAspectRatio.
     // Then, each image in the row is scaled up to fill the desired width of the row, while maintaining
@@ -42,13 +60,13 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
         for (let i = 0; i < images.length; i++) {
             let image = images[i]
 
-            // Add the padding into the ratio.
+            // Add the margin into the ratio.
             let ratio = image.width / image.height
 
             // If we're less than the min aspectRatio then keep adding more items to the row.
             if (width <= minAspectRatio && i !== images.length - 1) {
-                // Add the ratio contributed by the padding.
-                ratio += padding / image.height
+                // Add the ratio contributed by the margin.
+                ratio += margin / image.height
                 row.push([image, ratio])
                 width += ratio
             }
@@ -58,8 +76,8 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
                     width += ratio
                 }
                 let imageElements = []
-                for (let i = 0; i < row.length; i++) {
-                    imageElements.push(imageDataToImgTag(row[i], i, row, width, padding, ref))
+                for (let j = 0; j < row.length; j++) {
+                    imageElements.push(imageDataToImgTag(row[j], i - row.length + j, j, row, width))
                 }
                 // Add the finished row to the list of all rows.
                 allRows.push(imageElements)
@@ -74,11 +92,12 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
         // (Would be nice to use something like styled-components for this instead)
         const divStyle = {
             display: "flex",
-            paddingBottom: padding + "px"
+            marginBottom: margin + "px"
         }
         setRows(allRows.map((row, index) => <div className="grid-row" style={divStyle} key={"row_" + index}>{row}</div>))
-    }, [images, padding, minAspectRatio, ref, imageDataToImgTag])
+    }, [images, margin, minAspectRatio, imageDataToImgTag])
 
+    // Recalculate min aspect ratio when the window size changes.
     useEffect(() => {
         setMinAspectRatio(calcMinAspectRatio())
     }, [calcMinAspectRatio, windowSize])
@@ -92,11 +111,20 @@ const Grid = React.forwardRef(({ images, rowHeight, padding = 0 }, ref) => {
         }
     }, [minAspectRatio, makeRows])
 
-
     return (
-        <div className="grid-container" ref={ref}>
-            {rows}
-        </div>
+        <>
+            <div className="grid-container" ref={ref}>
+                {rows}
+            </div>
+            {showLightbox ?
+                <Lightbox
+                    selectedImage={images[selectedIndex]}
+                    onClose={() => setShowLightbox(false)}
+                    onPrev={() => setSelectedIndex(selectedIndex => (+selectedIndex - 1 + images.length) % images.length)}
+                    onNext={() => setSelectedIndex(selectedIndex => (+selectedIndex + 1) % images.length)} />
+                : null
+            }
+        </>
     )
 })
 
@@ -108,7 +136,7 @@ Grid.propTypes = {
             width: PropTypes.number.isRequired
         })).isRequired,
     rowHeight: PropTypes.number.isRequired,
-    padding: PropTypes.number
+    margin: PropTypes.number
 }
 
 export default Grid

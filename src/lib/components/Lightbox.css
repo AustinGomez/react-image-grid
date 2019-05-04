@@ -1,0 +1,85 @@
+.lightbox-window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 11;
+    background: black;
+    display: flex;
+}
+
+.lightbox-header-shadow {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 72px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0))
+}
+
+.lightbox-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+}
+
+#lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.back-button {
+    height: 20px;
+    position: absolute;
+    left: 25px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.arrow-container {
+    height: 80%;
+    width: 30%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position:absolute;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* override for the right arrow only */
+.arrow-container.right-arrow {
+    justify-content: flex-end;
+}
+
+.left-arrow {
+    left: 30px;
+}
+
+.right-arrow {
+    right: 30px;
+}
+
+.arrow-container img {
+    height: 72px;
+}
+
+
+
+.lightbox-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+}

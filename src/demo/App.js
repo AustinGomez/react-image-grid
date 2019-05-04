@@ -323,7 +323,7 @@ function App() {
   const ref = React.createRef();
   return (
     <div className="App">
-      <Grid images={images} rowHeight={200} ref={ref} padding={6} />
+      <Grid images={images} rowHeight={200} ref={ref} margin={5} />
     </div>
   );
 }
