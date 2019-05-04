@@ -34,7 +34,8 @@ See the src/demo for usage. You'll need the direct URLs to your photos, as well 
     - Drag and drop images
     - Make images selectable
 
-## Notes
-Project scaffolding from https://github.com/DimiMikadze/create-react-library. Minimum aspect ratio idea from https://github.com/schlosser/pig.js.
+##Notes
+Heavy design inspiration from Google Photos.
 
-Heavy inspiration from Google Photos as well!
+Minimum aspect ratio idea from https://github.com/schlosser/pig.js.
+
