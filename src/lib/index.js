@@ -1,5 +1,3 @@
-import Grid from './components/Grid'
+import Grid from "./components/Grid";
 
-export {
-  Grid,
-}
+export { Grid };
