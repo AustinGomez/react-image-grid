@@ -1,9 +1,19 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useSwipeable } from "react-swipeable";
 import "./Lightbox.css";
 
 const Lightbox = ({ selectedImage, onNext, onPrev, onClose }) => {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => onPrev(),
+    onSwipedRight: () => onNext(),
+    onSwipedDown: e => onClose(),
+    trackMouse: true,
+    trackTouch: true,
+    preventDefaultTouchmoveEvent: true
+  });
 
   const handleKeyPress = useCallback(
     e => {
@@ -43,7 +53,7 @@ const Lightbox = ({ selectedImage, onNext, onPrev, onClose }) => {
             onClick={onClose}
           />
         </div>
-        <div className="lightbox-image-container">
+        <div {...swipeHandlers} className="lightbox-image-container">
           <div
             className="arrow-container left-arrow"
             onClick={onPrev}

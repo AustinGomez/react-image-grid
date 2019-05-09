@@ -8370,6 +8370,13 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
+react-swipeable@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/react-swipeable/-/react-swipeable-5.2.1.tgz#92dc8c330efb26c46fca42e60b610d1eb429adbe"
+  integrity sha512-fnVoJQEMAV0zzWR/nXTHLc9BbB0aqa3X74O+PDdPfjWv1F3D+d9PtQZiQMNiZLlli7KO0YU5QX4thqC7xULCHw==
+  dependencies:
+    prop-types "^15.6.2"
+
 react@^16.8.6:
   version "16.8.6"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.6.tgz#ad6c3a9614fd3a4e9ef51117f54d888da01f2bbe"
