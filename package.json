@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/AustinGomez/react-image-grid#readme",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "react-swipeable": "^5.2.1"
+  },
   "devDependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "^4.2.0",
