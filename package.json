@@ -7,7 +7,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "demo": "node scripts/demo.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/AustinGomez/react-image-grid#readme",
   "license": "MIT",
   "dependencies": {
+    "coveralls": "^3.0.4",
     "react-swipeable": "^5.2.1"
   },
   "devDependencies": {
@@ -36,6 +38,9 @@
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^4.0.0",
     "eslint-loader": "2.1.2",
@@ -53,6 +58,7 @@
     "jest": "24.7.1",
     "jest-environment-jsdom-fourteen": "0.1.0",
     "jest-resolve": "24.7.1",
+    "jest-serializer-html": "^7.0.0",
     "jest-watch-typeahead": "0.3.0",
     "mini-css-extract-plugin": "0.5.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
@@ -96,12 +102,16 @@
     ]
   },
   "jest": {
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/enzyme-to-json/serializer"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
     ],
     "setupFiles": [
-      "react-app-polyfill/jsdom"
+      "react-app-polyfill/jsdom",
+      "<rootDir>/src/setupTests.js"
     ],
     "setupFilesAfterEnv": [],
     "testMatch": [

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lightbox component should render without crashing 1`] = `
+<Fragment>
+  <div
+    className="lightbox-backdrop"
+    onClick={[MockFunction]}
+  />
+  <div
+    className="lightbox-window"
+  >
+    <div
+      className="lightbox-header-shadow"
+    >
+      <img
+        alt="back-button-icon"
+        className="back-button"
+        onClick={[MockFunction]}
+        src="icons/left-arrow.svg"
+      />
+    </div>
+    <div
+      className="lightbox-image-container"
+      onMouseDown={[Function]}
+    >
+      <div
+        className="arrow-container left-arrow"
+        onClick={[MockFunction]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      />
+      <img
+        id="lightbox-image"
+      />
+      <div
+        className="arrow-container right-arrow"
+        onClick={[MockFunction]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      />
+    </div>
+  </div>
+</Fragment>
+`;

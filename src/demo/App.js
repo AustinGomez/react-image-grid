@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import useWindowSize from "../lib/hooks/UseWindowSize";
 import "./App.css";
 import Grid from "../lib/components/Grid";
 
 function App() {
+  let windowSize = useWindowSize();
   let generatedImages = Array(20)
     .fill(1)
     .map(() => {
@@ -15,11 +17,14 @@ function App() {
       };
     });
   const [images] = useState(generatedImages);
-
-  const ref = React.createRef();
   return (
     <div className="App">
-      <Grid images={images} rowHeight={200} ref={ref} margin={5} />
+      <Grid
+        images={images}
+        rowHeight={200}
+        margin={5}
+        width={Math.floor(windowSize.innerWidth * 0.8)}
+      />
     </div>
   );
 }
