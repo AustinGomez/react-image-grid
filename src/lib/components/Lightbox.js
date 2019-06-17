@@ -7,8 +7,8 @@ const Lightbox = ({ selectedImage, onNext, onPrev, onClose }) => {
   const [showRightArrow, setShowRightArrow] = useState(false);
 
   const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => onPrev(),
-    onSwipedRight: () => onNext(),
+    onSwipedLeft: () => onNext(),
+    onSwipedRight: () => onPrev(),
     onSwipedDown: e => onClose(),
     trackMouse: true,
     trackTouch: true,

@@ -1,0 +1,374 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid component should match snapshot with no images 1`] = `
+<Fragment>
+  <div
+    className="grid-container"
+  />
+</Fragment>
+`;
+
+exports[`Grid component should match snapshot with one image 1`] = `
+<Fragment>
+  <div
+    className="grid-container"
+  >
+    <div
+      className="grid-row"
+      key="row_0"
+      style={
+        Object {
+          "display": "flex",
+          "marginBottom": "0px",
+        }
+      }
+    >
+      <img
+        className="grid-img"
+        data-index={-1}
+        key="img_undefined_1"
+        onClick={[Function]}
+        src="fake"
+        style={
+          Object {
+            "height": "500px",
+            "marginRight": 0,
+            "width": "500px",
+          }
+        }
+      />
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[`Grid component should render many images 1`] = `
+<Fragment>
+  <div
+    className="grid-container"
+  >
+    <div
+      className="grid-row"
+      key="row_0"
+      style={
+        Object {
+          "display": "flex",
+          "marginBottom": "0px",
+        }
+      }
+    >
+      <img
+        className="grid-img"
+        data-index={0}
+        key="img_undefined_0.8012958963282938"
+        onClick={[Function]}
+        src="https://via.placeholder.com/371x463"
+        style={
+          Object {
+            "height": "84.73965581979495px",
+            "marginRight": "0px",
+            "width": "67.9015384646737px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={1}
+        key="img_undefined_0.4735945485519591"
+        onClick={[Function]}
+        src="https://via.placeholder.com/278x587"
+        style={
+          Object {
+            "height": "84.73965581979495px",
+            "marginRight": "0px",
+            "width": "40.13223904242418px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={2}
+        key="img_undefined_0.8771084337349397"
+        onClick={[Function]}
+        src="https://via.placeholder.com/364x415"
+        style={
+          Object {
+            "height": "84.73965581979495px",
+            "marginRight": "0px",
+            "width": "74.32586679133821px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={3}
+        key="img_undefined_1.0583153347732182"
+        onClick={[Function]}
+        src="https://via.placeholder.com/490x463"
+        style={
+          Object {
+            "height": "84.73965581979495px",
+            "marginRight": "0px",
+            "width": "89.68127721749357px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={4}
+        key="img_undefined_0.9795918367346939"
+        onClick={[Function]}
+        src="https://via.placeholder.com/480x490"
+        style={
+          Object {
+            "height": "84.73965581979495px",
+            "marginRight": "0px",
+            "width": "83.01027508877873px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={5}
+        key="img_undefined_0.38838475499092556"
+        onClick={[Function]}
+        src="https://via.placeholder.com/214x551"
+        style={
+          Object {
+            "height": "84.73965581979495px",
+            "marginRight": "0px",
+            "width": "32.91159046358642px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={6}
+        key="img_undefined_1.3221343873517786"
+        onClick={[Function]}
+        src="https://via.placeholder.com/669x506"
+        style={
+          Object {
+            "height": "84.73965581979495px",
+            "marginRight": 0,
+            "width": "112.03721293170517px",
+          }
+        }
+      />
+    </div>
+    <div
+      className="grid-row"
+      key="row_1"
+      style={
+        Object {
+          "display": "flex",
+          "marginBottom": "0px",
+        }
+      }
+    >
+      <img
+        className="grid-img"
+        data-index={6}
+        key="img_undefined_0.8730703259005146"
+        onClick={[Function]}
+        src="https://via.placeholder.com/509x583"
+        style={
+          Object {
+            "height": "205.4140268360489px",
+            "marginRight": "0px",
+            "width": "179.34089135428624px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={7}
+        key="img_undefined_0.8839779005524862"
+        onClick={[Function]}
+        src="https://via.placeholder.com/320x362"
+        style={
+          Object {
+            "height": "205.4140268360489px",
+            "marginRight": "0px",
+            "width": "181.58146018656254px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={8}
+        key="img_undefined_0.6770601336302895"
+        onClick={[Function]}
+        src="https://via.placeholder.com/304x449"
+        style={
+          Object {
+            "height": "205.4140268360489px",
+            "marginRight": 0,
+            "width": "139.07764845915113px",
+          }
+        }
+      />
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[`Grid component should respond to different widths 1`] = `
+<Fragment>
+  <div
+    className="grid-container"
+  >
+    <div
+      className="grid-row"
+      key="row_0"
+      style={
+        Object {
+          "display": "flex",
+          "marginBottom": "0px",
+        }
+      }
+    >
+      <img
+        className="grid-img"
+        data-index={-1}
+        key="img_undefined_0.8012958963282938"
+        onClick={[Function]}
+        src="https://via.placeholder.com/371x463"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": "0px",
+            "width": "86.527494568055px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={0}
+        key="img_undefined_0.4735945485519591"
+        onClick={[Function]}
+        src="https://via.placeholder.com/278x587"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": "0px",
+            "width": "51.14084561653724px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={1}
+        key="img_undefined_0.8771084337349397"
+        onClick={[Function]}
+        src="https://via.placeholder.com/364x415"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": "0px",
+            "width": "94.71406952582369px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={2}
+        key="img_undefined_1.0583153347732182"
+        onClick={[Function]}
+        src="https://via.placeholder.com/490x463"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": "0px",
+            "width": "114.28159659931792px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={3}
+        key="img_undefined_0.9795918367346939"
+        onClick={[Function]}
+        src="https://via.placeholder.com/480x490"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": "0px",
+            "width": "105.78068316631575px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={4}
+        key="img_undefined_0.38838475499092556"
+        onClick={[Function]}
+        src="https://via.placeholder.com/214x551"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": "0px",
+            "width": "41.93951314587065px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={5}
+        key="img_undefined_1.3221343873517786"
+        onClick={[Function]}
+        src="https://via.placeholder.com/669x506"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": "0px",
+            "width": "142.7699512053276px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={6}
+        key="img_undefined_0.8730703259005146"
+        onClick={[Function]}
+        src="https://via.placeholder.com/509x583"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": "0px",
+            "width": "94.27801668278593px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={7}
+        key="img_undefined_0.8839779005524862"
+        onClick={[Function]}
+        src="https://via.placeholder.com/320x362"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": "0px",
+            "width": "95.45586510404185px",
+          }
+        }
+      />
+      <img
+        className="grid-img"
+        data-index={8}
+        key="img_undefined_0.6770601336302895"
+        onClick={[Function]}
+        src="https://via.placeholder.com/304x449"
+        style={
+          Object {
+            "height": "107.98444739894734px",
+            "marginRight": 0,
+            "width": "73.11196438592425px",
+          }
+        }
+      />
+    </div>
+  </div>
+</Fragment>
+`;

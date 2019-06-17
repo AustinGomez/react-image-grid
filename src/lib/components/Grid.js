@@ -1,22 +1,11 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
-import useWindowSize from "../hooks/UseWindowSize";
 import Lightbox from "./Lightbox";
 import "./Grid.css";
 
-const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
-  let windowSize = useWindowSize();
-  const [minAspectRatio, setMinAspectRatio] = useState();
-  const [rows, setRows] = useState([]);
+const Grid = ({ images, rowHeight, margin = 0, width }) => {
   const [showLightbox, setShowLightbox] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState();
-
-  // We'll use this value to calculate how many pictures we need in a row.
-  // The "min" aspect ratio is the aspect ratio that will allow the row to
-  // span the correct length while being between minRowHeight and maxRowHeight
-  const calcMinAspectRatio = useCallback(() => {
-    return ref.current.parentNode.clientWidth / rowHeight;
-  }, [rowHeight, ref]);
 
   const handleImageClick = e => {
     setSelectedIndex(e.target.getAttribute("data-index"));
@@ -26,8 +15,8 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
   // Creates <img/> tags from image and row metadata.
   //
   const imageDataToImgTag = useCallback(
-    (image, totalIndex, rowIndex, row, width) => {
-      const calculatedRowHeight = ref.current.parentNode.clientWidth / width;
+    (image, totalIndex, rowIndex, row, imageWidth) => {
+      const calculatedRowHeight = width / imageWidth;
 
       // Calculate the dimensions and margin of each image. This needs
       // to be inline since we need some values from the JS.
@@ -52,16 +41,22 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
         />
       );
     },
-    [ref, margin]
+    [margin, width]
   );
 
   // Build the rows of the grid. Each row must have an aspect ratio of at least minAspectRatio.
   // Then, each image in the row is scaled up to fill the desired width of the row, while maintaining
   // the aspect ratio of each photo in the row.
-  const makeRows = useCallback(() => {
+  const rows = useMemo(() => {
     let allRows = [];
     let row = [];
-    let width = 0;
+    let widthSoFar = 0;
+
+    // We'll use this value to calculate how many pictures we need in a row.
+    // The "min" aspect ratio is the aspect ratio that will allow the row to
+    // span the correct length while being between minRowHeight and maxRowHeight
+    const minAspectRatio = width / rowHeight;
+
     for (let i = 0; i < images.length; i++) {
       let image = images[i];
 
@@ -69,20 +64,20 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
       let ratio = image.width / image.height;
 
       // If we're less than the min aspectRatio then keep adding more items to the row.
-      if (width <= minAspectRatio && i !== images.length - 1) {
+      if (widthSoFar <= minAspectRatio && i !== images.length - 1) {
         // Add the ratio contributed by the margin.
         ratio += margin / image.height;
         row.push([image, ratio]);
-        width += ratio;
+        widthSoFar += ratio;
       } else {
         if (i === images.length - 1) {
           row.push([image, ratio]);
-          width += ratio;
+          widthSoFar += ratio;
         }
         let imageElements = [];
         for (let j = 0; j < row.length; j++) {
           imageElements.push(
-            imageDataToImgTag(row[j], i - row.length + j, j, row, width)
+            imageDataToImgTag(row[j], i - row.length + j, j, row, widthSoFar)
           );
         }
         // Add the finished row to the list of all rows.
@@ -90,7 +85,7 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
 
         // Start a new row with the current image as the first image
         row = [[image, ratio]];
-        width = ratio;
+        widthSoFar = ratio;
       }
     }
 
@@ -100,54 +95,41 @@ const Grid = React.forwardRef(({ images, rowHeight, margin = 0 }, ref) => {
       display: "flex",
       marginBottom: margin + "px"
     };
-    setRows(
-      allRows.map((row, index) => (
-        <div className="grid-row" style={divStyle} key={"row_" + index}>
-          {row}
-        </div>
-      ))
+    return allRows.map((row, index) => (
+      <div className="grid-row" style={divStyle} key={"row_" + index}>
+        {row}
+      </div>
+    ));
+  }, [width, imageDataToImgTag, images, margin, rowHeight]);
+
+  const handleClose = useCallback(() => {
+    setShowLightbox(false);
+  }, []);
+
+  const handlePrev = useCallback(() => {
+    setSelectedIndex(
+      selectedIndex => (+selectedIndex - 1 + images.length) % images.length
     );
-  }, [images, margin, minAspectRatio, imageDataToImgTag]);
+  }, [images.length]);
 
-  // Recalculate min aspect ratio when the window size changes.
-  useEffect(() => {
-    setMinAspectRatio(calcMinAspectRatio());
-  }, [calcMinAspectRatio, windowSize]);
-
-  // This isn't optimal. Ideally we don't want to call makeRows every time the aspect ratio changes.
-  // There should be a resizeRows method that just goes through each row and recalculates and resizes
-  // each row/image.
-  useEffect(() => {
-    if (minAspectRatio) {
-      makeRows();
-    }
-  }, [minAspectRatio, makeRows]);
+  const handleNext = useCallback(() => {
+    setSelectedIndex(selectedIndex => (+selectedIndex + 1) % images.length);
+  }, [images.length]);
 
   return (
     <>
-      <div className="grid-container" ref={ref}>
-        {rows}
-      </div>
+      <div className="grid-container">{rows}</div>
       {showLightbox ? (
         <Lightbox
           selectedImage={images[selectedIndex]}
-          onClose={() => setShowLightbox(false)}
-          onPrev={() =>
-            setSelectedIndex(
-              selectedIndex =>
-                (+selectedIndex - 1 + images.length) % images.length
-            )
-          }
-          onNext={() =>
-            setSelectedIndex(
-              selectedIndex => (+selectedIndex + 1) % images.length
-            )
-          }
+          onClose={handleClose}
+          onPrev={handlePrev}
+          onNext={handleNext}
         />
       ) : null}
     </>
   );
-});
+};
 
 Grid.propTypes = {
   images: PropTypes.arrayOf(
