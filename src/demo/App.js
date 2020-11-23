@@ -17,7 +17,7 @@ function App() {
       };
     });
   const [images] = useState(generatedImages);
-  const [lightbox, setLightboxEnabled] = useState(true);
+  const [isLightboxEnabled, setLightboxEnabled] = useState(true);
   const onLightboxEnabled = event => setLightboxEnabled(event.target.checked);
 
   return (
@@ -28,14 +28,14 @@ function App() {
           id="lightbox-enabled"
           type="checkbox"
           onChange={onLightboxEnabled}
-          checked={lightbox}
+          checked={isLightboxEnabled}
         />
       </div>
       <Grid
         images={images}
         rowHeight={200}
         margin={5}
-        lightbox={lightbox}
+        isLightboxEnabled={isLightboxEnabled}
         width={Math.floor(windowSize.innerWidth * 0.8)}
       />
     </div>
