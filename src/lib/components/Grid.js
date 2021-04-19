@@ -3,7 +3,13 @@ import PropTypes from "prop-types";
 import Lightbox from "./Lightbox";
 import "./Grid.css";
 
-const Grid = ({ images, rowHeight, margin = 0, width }) => {
+const Grid = ({
+  images,
+  rowHeight,
+  margin = 0,
+  width,
+  isLightboxEnabled = true
+}) => {
   const [showLightbox, setShowLightbox] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState();
 
@@ -31,17 +37,17 @@ const Grid = ({ images, rowHeight, margin = 0, width }) => {
       };
       return (
         <img
-          className="grid-img"
+          className={`grid-img ${isLightboxEnabled ? "lightbox-enabled" : ""}`}
           style={imageStyle}
           data-index={totalIndex}
-          onClick={handleImageClick}
+          onClick={isLightboxEnabled ? handleImageClick : undefined}
           src={image[0].src}
           alt={image[0].alt}
           key={"img_" + image[0].id + "_" + image[1]}
         />
       );
     },
-    [margin, width]
+    [margin, width, isLightboxEnabled]
   );
 
   // Build the rows of the grid. Each row must have an aspect ratio of at least minAspectRatio.
@@ -140,7 +146,8 @@ Grid.propTypes = {
     })
   ).isRequired,
   rowHeight: PropTypes.number.isRequired,
-  margin: PropTypes.number
+  margin: PropTypes.number,
+  isLightboxEnabled: PropTypes.bool
 };
 
 export default Grid;

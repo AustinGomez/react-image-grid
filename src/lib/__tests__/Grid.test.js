@@ -16,7 +16,7 @@ describe("Grid component", () => {
 
     wrapper = shallow(<Grid images={images} rowHeight={100} width={500} />);
   });
-  it("should match snapshot with no images", () => {
+  it("should render no images", () => {
     images = [];
     wrapper = shallow(<Grid images={images} rowHeight={100} width={500} />);
     expect(wrapper.find(".grid-container")).toHaveLength(1);
@@ -25,7 +25,7 @@ describe("Grid component", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should match snapshot with one image", () => {
+  it("should render one image", () => {
     expect(wrapper.find(".grid-container")).toHaveLength(1);
     expect(wrapper.find(".grid-row")).toHaveLength(1);
     expect(wrapper.find(".grid-img")).toHaveLength(1);
