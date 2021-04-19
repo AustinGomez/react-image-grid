@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useWindowSize from "../lib/hooks/UseWindowSize";
+import useWindowSize from "./hooks/UseWindowSize";
 import "./App.css";
 import Grid from "../lib/components/Grid";
 
