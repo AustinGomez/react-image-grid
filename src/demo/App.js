@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useWindowSize from "../lib/hooks/UseWindowSize";
+import useWindowSize from "./hooks/UseWindowSize";
 import "./App.css";
 import Grid from "../lib/components/Grid";
 
@@ -23,6 +23,7 @@ function App() {
         images={images}
         rowHeight={200}
         margin={5}
+        isLightboxEnabled={true}
         width={Math.floor(windowSize.innerWidth * 0.8)}
       />
     </div>

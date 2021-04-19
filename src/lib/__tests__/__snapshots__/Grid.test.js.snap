@@ -1,47 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Grid component should match snapshot with no images 1`] = `
-<Fragment>
-  <div
-    className="grid-container"
-  />
-</Fragment>
-`;
-
-exports[`Grid component should match snapshot with one image 1`] = `
-<Fragment>
-  <div
-    className="grid-container"
-  >
-    <div
-      className="grid-row"
-      key="row_0"
-      style={
-        Object {
-          "display": "flex",
-          "marginBottom": "0px",
-        }
-      }
-    >
-      <img
-        className="grid-img"
-        data-index={-1}
-        key="img_undefined_1"
-        onClick={[Function]}
-        src="fake"
-        style={
-          Object {
-            "height": "500px",
-            "marginRight": 0,
-            "width": "500px",
-          }
-        }
-      />
-    </div>
-  </div>
-</Fragment>
-`;
-
 exports[`Grid component should render many images 1`] = `
 <Fragment>
   <div
@@ -58,7 +16,7 @@ exports[`Grid component should render many images 1`] = `
       }
     >
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={0}
         key="img_undefined_0.8012958963282938"
         onClick={[Function]}
@@ -72,7 +30,7 @@ exports[`Grid component should render many images 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={1}
         key="img_undefined_0.4735945485519591"
         onClick={[Function]}
@@ -86,7 +44,7 @@ exports[`Grid component should render many images 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={2}
         key="img_undefined_0.8771084337349397"
         onClick={[Function]}
@@ -100,7 +58,7 @@ exports[`Grid component should render many images 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={3}
         key="img_undefined_1.0583153347732182"
         onClick={[Function]}
@@ -114,7 +72,7 @@ exports[`Grid component should render many images 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={4}
         key="img_undefined_0.9795918367346939"
         onClick={[Function]}
@@ -128,7 +86,7 @@ exports[`Grid component should render many images 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={5}
         key="img_undefined_0.38838475499092556"
         onClick={[Function]}
@@ -142,7 +100,7 @@ exports[`Grid component should render many images 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={6}
         key="img_undefined_1.3221343873517786"
         onClick={[Function]}
@@ -167,7 +125,7 @@ exports[`Grid component should render many images 1`] = `
       }
     >
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={6}
         key="img_undefined_0.8730703259005146"
         onClick={[Function]}
@@ -181,7 +139,7 @@ exports[`Grid component should render many images 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={7}
         key="img_undefined_0.8839779005524862"
         onClick={[Function]}
@@ -195,7 +153,7 @@ exports[`Grid component should render many images 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={8}
         key="img_undefined_0.6770601336302895"
         onClick={[Function]}
@@ -205,6 +163,48 @@ exports[`Grid component should render many images 1`] = `
             "height": "205.4140268360489px",
             "marginRight": 0,
             "width": "139.07764845915113px",
+          }
+        }
+      />
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[`Grid component should render no images 1`] = `
+<Fragment>
+  <div
+    className="grid-container"
+  />
+</Fragment>
+`;
+
+exports[`Grid component should render one image 1`] = `
+<Fragment>
+  <div
+    className="grid-container"
+  >
+    <div
+      className="grid-row"
+      key="row_0"
+      style={
+        Object {
+          "display": "flex",
+          "marginBottom": "0px",
+        }
+      }
+    >
+      <img
+        className="grid-img lightbox-enabled"
+        data-index={-1}
+        key="img_undefined_1"
+        onClick={[Function]}
+        src="fake"
+        style={
+          Object {
+            "height": "500px",
+            "marginRight": 0,
+            "width": "500px",
           }
         }
       />
@@ -229,7 +229,7 @@ exports[`Grid component should respond to different widths 1`] = `
       }
     >
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={-1}
         key="img_undefined_0.8012958963282938"
         onClick={[Function]}
@@ -243,7 +243,7 @@ exports[`Grid component should respond to different widths 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={0}
         key="img_undefined_0.4735945485519591"
         onClick={[Function]}
@@ -257,7 +257,7 @@ exports[`Grid component should respond to different widths 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={1}
         key="img_undefined_0.8771084337349397"
         onClick={[Function]}
@@ -271,7 +271,7 @@ exports[`Grid component should respond to different widths 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={2}
         key="img_undefined_1.0583153347732182"
         onClick={[Function]}
@@ -285,7 +285,7 @@ exports[`Grid component should respond to different widths 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={3}
         key="img_undefined_0.9795918367346939"
         onClick={[Function]}
@@ -299,7 +299,7 @@ exports[`Grid component should respond to different widths 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={4}
         key="img_undefined_0.38838475499092556"
         onClick={[Function]}
@@ -313,7 +313,7 @@ exports[`Grid component should respond to different widths 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={5}
         key="img_undefined_1.3221343873517786"
         onClick={[Function]}
@@ -327,7 +327,7 @@ exports[`Grid component should respond to different widths 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={6}
         key="img_undefined_0.8730703259005146"
         onClick={[Function]}
@@ -341,7 +341,7 @@ exports[`Grid component should respond to different widths 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={7}
         key="img_undefined_0.8839779005524862"
         onClick={[Function]}
@@ -355,7 +355,7 @@ exports[`Grid component should respond to different widths 1`] = `
         }
       />
       <img
-        className="grid-img"
+        className="grid-img lightbox-enabled"
         data-index={8}
         key="img_undefined_0.6770601336302895"
         onClick={[Function]}

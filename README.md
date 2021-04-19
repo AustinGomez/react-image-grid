@@ -26,16 +26,9 @@ See the src/demo for usage. You'll need the direct URLs to your photos, as well 
 ## Project Roadmap
 - Performance
     - Implement lazy loading of photos (only in viewport images loaded)
-    - Proper sized thumbnails
     - Support multiple image sizes for different devices
     - Increase initial scroll and render speed
 - Features
-    - Add swipe gesture for mobile lightbox.
     - Drag and drop images
     - Make images selectable
-
-## Notes
-Heavy design inspiration from Google Photos.
-
-Minimum aspect ratio idea from https://github.com/schlosser/pig.js.
 
